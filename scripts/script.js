@@ -26,10 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function setTheme(theme) {
-  document.documentElement.className = '';
-  document.documentElement.classList.add(`theme-${theme}`);
+  const page = document.querySelector('.page');
+  page.className = 'page'; // очищаем, оставляем базовый класс
+  page.classList.add(`theme_${theme}`); // добавляем нужную тему
   localStorage.setItem('theme', theme);
 }
+
 
 function setActiveButton(buttonsArray, theme) {
   buttonsArray.forEach((button) => {
